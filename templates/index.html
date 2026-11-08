@@ -1,0 +1,128 @@
+﻿
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>IPTV Scanner & Web Player Pro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <div class="hero-banner">
+    <span class="hero-spark"></span><span class="hero-spark"></span>
+    <span class="hero-spark"></span><span class="hero-spark"></span>
+    <div class="hero-left">
+      <svg class="hero-logo" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="boltGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#F5C9A8"/>
+            <stop offset="100%" stop-color="#D97757"/>
+          </linearGradient>
+        </defs>
+        <polygon points="24,3 44,24 24,45 4,24" fill="none" stroke="url(#boltGrad)" stroke-width="2.2"/>
+        <polygon points="27,10 14,25 22,25 19,38 34,21 25,21" fill="url(#boltGrad)"/>
+      </svg>
+      <div class="hero-text">
+        <h1>ASTRAX · IPTV Player & Scanner</h1>
+        <p>Tu reproductor y escáner de streaming</p>
+      </div>
+    </div>
+    <div class="hero-right">
+      <a class="gh-badge" href="https://github.com/AstraxOf" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+          0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13
+          -.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07
+          -1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82
+          .64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12
+          .51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2
+          0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        <span>@AstraxOf</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="topbar">
+    <div class="brand"><span class="dot"></span>IPTV Player & Scanner</div>
+    <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">Tema</button>
+  </div>
+
+  <div class="wrap">
+    <!-- Columna Izquierda: Escaneo y Servidores -->
+    <div style="display:flex; flex-direction:column; gap:18px;">
+      <div class="card">
+        <h2>Escaneo de Redes IP</h2>
+        <div class="input-grid">
+          <div>
+            <label style="font-size:12px; color:var(--text-muted); display:block; margin-bottom:4px;">IP Inicial</label>
+            <input type="text" id="start_ip" value="192.168.0.0">
+          </div>
+          <div>
+            <label style="font-size:12px; color:var(--text-muted); display:block; margin-bottom:4px;">IP Final</label>
+            <input type="text" id="end_ip" value="192.168.255.255">
+          </div>
+        </div>
+        <div style="margin-bottom:12px;">
+          <label style="font-size:12px; color:var(--text-muted); display:block; margin-bottom:4px;">Puerto</label>
+          <input type="text" id="port" value="8000">
+        </div>
+        <button class="btn-primary" id="btnScanRange" onclick="startIpScan()">Iniciar Escaneo</button>
+        <div class="status-line" id="rangeStatusText">Estado: Inactivo</div>
+      </div>
+
+      <div class="card">
+        <h2>Servidores Encontrados<span class="count-pill" id="countServers">0</span></h2>
+        <ul class="server-list" id="serverList">
+          <li class="empty-state">Inicia un escaneo para descubrir servidores.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Columna Derecha: Reproductor y Canales -->
+    <div style="display:flex; flex-direction:column; gap:18px;">
+      <div class="card">
+        <h2>Cargar Lista M3U</h2>
+        <div class="load-row">
+          <input type="text" id="m3u_url" placeholder="https://tu-proveedor.com/playlist.m3u8">
+          <button class="btn-primary" id="btnLoad" style="width:auto;" onclick="loadM3U()">Cargar</button>
+        </div>
+        <div class="status-line" id="loadStatus"></div>
+      </div>
+
+      <div class="card player-card">
+        <div class="player-shell" id="playerShell">
+          <video id="videoPlayer" controls playsinline></video>
+          <div class="overlay" id="overlay">
+            <div class="spinner" id="spinner"></div>
+            <div id="overlayText">Cargando stream…</div>
+            <button class="retry-btn" id="retryBtn" style="display:none" onclick="retryCurrent()">Reintentar</button>
+          </div>
+        </div>
+        <div class="now-playing">
+          <span id="nowPlaying">Selecciona un canal</span>
+          <label class="autoskip-label">
+            <input type="checkbox" id="autoSkipToggle" checked>
+            Saltar canales no compatibles
+          </label>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Canales<span class="count-pill" id="countChannels">0</span></h2>
+        <div class="search-row">
+          <input type="text" id="searchBox" placeholder="Buscar canal…" onkeyup="filterChannels()">
+        </div>
+        <ul class="channel-list" id="channelList">
+          <li class="empty-state">Carga una lista M3U para ver tus canales aquí.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.15/dist/hls.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mpegts.js@1.7.3/dist/mpegts.js"></script>
+<script src="/static/js/app.js"></script>
+</body>
+</html>
