@@ -2,7 +2,7 @@
 
 <h1 align="center">📺 IPTV Player & Scanner</h1>
 
-**A lightweight, web-based IPTV player and automated M3U playlist scanner powered by Python & Flask.**
+**A lightweight, web-based IP range scanner and IPTV player powered by Python & Flask.**
 
 [![English](https://img.shields.io/badge/English-Click-2563eb?style=flat-square)](#)
 [![Español](https://img.shields.io/badge/Español-Clic-eab308?style=flat-square)](README.es.md)
@@ -25,16 +25,26 @@
 
 ---
 
-> **IPTV Player & Scanner** allows you to stream live IPTV channels directly in your browser while scanning, testing, and managing your M3U playlist stream links in real time.
+> **IPTV Player & Scanner** allows you to scan custom IP address ranges (e.g., from `192.168.0.0` to `192.168.255.255`), discover active servers, and stream live IPTV channels directly in your browser or through external players.
 
 ---
 
 ## 🚀 Features
 
-- 📺 **Live IPTV Stream Player:** Play standard HTTP/HTTPS IPTV streams directly within your web browser.
-- ⚡ **Automated Stream Scanner:** Quickly scan channels from your M3U playlists to identify active and dead streams.
-- 🎨 **Responsive UI:** Clean, modern Web interface built using HTML5, CSS3, and JavaScript.
-- 🛠️ **Powered by Flask:** Lightweight Python backend (`app.py`) for handling stream routes and scanning logic seamlessly.
+- 🌐 **IP Range Scanner:** Scan custom IP address ranges (such as `192.168.0.0` to `192.168.255.255`) to find active IPTV servers and playlists.
+- 🔌 **Customizable Ports (Default 8000):** Set any target port you need. It defaults to **Port 8000**, which hosts the vast majority of M3U playlists and IPTV streams.
+- 📺 **Built-in Player:** Play live channels directly within your web browser interface.
+- ⚡ **Stream Management:** Quickly test and verify M3U playlist stream links in real time.
+- 🎨 **Responsive UI:** Clean, modern web interface built using HTML5, CSS3, and JavaScript.
+- 🛠️ **Powered by Flask:** Lightweight Python backend (`app.py`) for handling routes and scanning logic seamlessly.
+
+---
+
+## ⚠️ Important Note About the Web Player
+
+While the application features a convenient **built-in player**, some channels may occasionally get stuck loading or fail to play. This occurs because **web browser encoding and codec limitations** do not always natively support older or legacy broadcast transmissions (such as MPEG-TS / `.ts` streams).
+
+💡 **Recommendation:** If a channel experiences loading issues or if you want to enjoy **all channels without restrictions**, we recommend opening the stream links using **VLC Media Player** or any external app with M3U playlist support.
 
 ---
 
@@ -55,68 +65,5 @@ Click the button below to download the latest project version:
 ### Option 2: Clone via Terminal
 
 ```bash
-git clone https://github.com/AstraxOf/IPTV-Player-Scanner.git
+git clone [https://github.com/AstraxOf/IPTV-Player-Scanner.git](https://github.com/AstraxOf/IPTV-Player-Scanner.git)
 cd IPTV-Player-Scanner
-```
-
-### Setup & Run
-
-1. **Create a Virtual Environment (Optional but Recommended):**
-   ```bash
-   python -m venv venv
-   # On Windows:
-   venv\Scripts\activate
-   # On macOS/Linux:
-   source venv/bin/activate
-   ```
-
-2. **Install Dependencies:**
-   ```bash
-   pip install flask requests
-   ```
-
-3. **Run the Application:**
-   ```bash
-   python app.py
-   ```
-
-4. **Open in Browser:**
-   Navigate to `http://127.0.0.1:5000` in your web browser.
-
----
-
-## 📁 Project Structure
-
-```text
-IPTV Player & Scanner/
-│
-├── app.py                  # Main Flask application script
-├── static/
-│   ├── css/
-│   │   └── style.css       # Custom styling & modern web design
-│   └── js/
-│       └── app.js          # Player controls & UI interaction logic
-└── templates/
-    └── index.html          # Main application web interface
-```
-
----
-
-## 🤝 Community & Socials
-
-[![Telegram Channel](https://img.shields.io/badge/Telegram-Official%20channel-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/AstraxMCP)
-[![YouTube](https://img.shields.io/badge/YouTube-@AstraxOf-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtube.com/@AstraxOf)
-[![Creator on Telegram](https://img.shields.io/badge/Creator-@RufusOficial-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/RufusOficial)
-[![Email](https://img.shields.io/badge/Email-avpn497%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:avpn497@gmail.com)
-
----
-
-## 📄 License
-
-This project is licensed under the **MIT License**. See the `LICENSE` file for details.
-
-<div align="center">
-
-Made with 💙 by Rufus · [@AstraxOf](https://github.com/AstraxOf) · [astrabots.pro](https://astrabots.pro)
-
-</div>
