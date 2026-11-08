@@ -12,7 +12,7 @@
 ![Flask](https://img.shields.io/badge/Flask-2.x-000000?style=flat-square&logo=flask&logoColor=white)
 ![Frontend](https://img.shields.io/badge/Frontend-JS%20%7C%20HTML5%20%7C%20CSS3-orange?style=flat-square)
 
-<!-- Estadísticas de Clones, Descargas y Versiones -->
+<!-- Repository Statistics -->
 [![GitHub Downloads (All Releases)](https://img.shields.io/github/downloads/AstraxOf/IPTV-Player-Scanner/total?style=flat-square&logo=github&color=22c55e&label=Total%20Downloads)](https://github.com/AstraxOf/IPTV-Player-Scanner/releases)
 [![GitHub Clones](https://img.shields.io/badge/dynamic/json?color=blue&label=Clones&query=count&url=https%3A%2F%2Fimg.shields.io%2Fbadge%2Fdynamic%2Fjson%3Fcolor%3Dblue%26label%3DClones%26query%3Dcount%26url%3Dhttps%3A%2F%2Fapi.github.com%2Frepos%2FAstraxOf%2FIPTV-Player-Scanner%2Ftraffic%2Fclones&style=flat-square&logo=github)](https://github.com/AstraxOf/IPTV-Player-Scanner)
 [![GitHub Release](https://img.shields.io/github/v/release/AstraxOf/IPTV-Player-Scanner?style=flat-square&logo=github&color=orange)](https://github.com/AstraxOf/IPTV-Player-Scanner/releases/latest)
@@ -30,18 +30,17 @@
 
 ---
 
-> **IPTV Player & Scanner** is a robust developer tool designed to scan custom IP address ranges (such as `192.168.0.0` to `192.168.255.255`) across specific ports—defaulting to **Port 8000**, where the vast majority of M3U playlists and IPTV servers reside—allowing you to discover active streams and play them seamlessly.
+> **IPTV Player & Scanner** is a modern web application designed to scan network ranges, discover active IPTV servers, and stream live channels directly from your browser or external media players.
 
 ---
 
 ## 🚀 Key Features
 
-- 🌐 **Advanced IP Range Scanner:** Scan arbitrary subnet ranges and target custom ports to locate active servers hosting IPTV streams.
-- 🔌 **Default Port 8000 Optimization:** Pre-configured for port 8000 to instantly target standard M3U playlist environments.
+- 🌐 **IP Range Scanner:** Search and scan custom subnet ranges and target custom ports to discover active IPTV servers.
+- 🔌 **Default Port 8000 Support:** Configured out-of-the-box to target port 8000, optimizing the discovery of standard M3U playlist streams.
 - 📺 **Integrated Web Player:** Stream live channels directly inside your browser interface.
-- ⚡ **Real-time Stream Management:** Test, validate, and organize discovered stream links instantly.
 - 🎨 **Modern Responsive UI:** Clean, dark-themed dashboard built with HTML5, CSS3, and Vanilla JavaScript.
-- 🛠️ **Lightweight Flask Backend:** Powered by a clean Python (`app.py`) engine managing background HTTP/socket requests.
+- 🛠️ **Lightweight Flask Backend:** Powered by a clean Python (`app.py`) engine managing background requests smoothly.
 
 ---
 
