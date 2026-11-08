@@ -2,7 +2,7 @@
 
 <h1 align="center">📺 IPTV Player & Scanner</h1>
 
-**A lightweight, web-based IP range scanner and IPTV player powered by Python & Flask.**
+**A lightweight, high-performance web-based IP range scanner and IPTV player powered by Python & Flask.**
 
 [![English](https://img.shields.io/badge/English-Click-2563eb?style=flat-square)](#)
 [![Español](https://img.shields.io/badge/Español-Clic-eab308?style=flat-square)](README.es.md)
@@ -11,6 +11,11 @@
 ![Python](https://img.shields.io/badge/Python-3.8%2B-3776AB?style=flat-square&logo=python&logoColor=white)
 ![Flask](https://img.shields.io/badge/Flask-2.x-000000?style=flat-square&logo=flask&logoColor=white)
 ![Frontend](https://img.shields.io/badge/Frontend-JS%20%7C%20HTML5%20%7C%20CSS3-orange?style=flat-square)
+
+<!-- Estadísticas de Clones, Descargas y Versiones -->
+[![GitHub Downloads (All Releases)](https://img.shields.io/github/downloads/AstraxOf/IPTV-Player-Scanner/total?style=flat-square&logo=github&color=22c55e&label=Total%20Downloads)](https://github.com/AstraxOf/IPTV-Player-Scanner/releases)
+[![GitHub Clones](https://img.shields.io/badge/dynamic/json?color=blue&label=Clones&query=count&url=https%3A%2F%2Fimg.shields.io%2Fbadge%2Fdynamic%2Fjson%3Fcolor%3Dblue%26label%3DClones%26query%3Dcount%26url%3Dhttps%3A%2F%2Fapi.github.com%2Frepos%2FAstraxOf%2FIPTV-Player-Scanner%2Ftraffic%2Fclones&style=flat-square&logo=github)](https://github.com/AstraxOf/IPTV-Player-Scanner)
+[![GitHub Release](https://img.shields.io/github/v/release/AstraxOf/IPTV-Player-Scanner?style=flat-square&logo=github&color=orange)](https://github.com/AstraxOf/IPTV-Player-Scanner/releases/latest)
 
 [![Telegram](https://img.shields.io/badge/Telegram-Channel-26A5E4?style=flat-square&logo=telegram&logoColor=white)](https://t.me/AstraxMCP)
 [![YouTube](https://img.shields.io/badge/YouTube-@AstraxOf-FF0000?style=flat-square&logo=youtube&logoColor=white)](https://youtube.com/@AstraxOf)
@@ -25,40 +30,40 @@
 
 ---
 
-> **IPTV Player & Scanner** allows you to scan custom IP address ranges (e.g., from `192.168.0.0` to `192.168.255.255`), discover active servers, and stream live IPTV channels directly in your browser or through external players.
+> **IPTV Player & Scanner** is a robust developer tool designed to scan custom IP address ranges (such as `192.168.0.0` to `192.168.255.255`) across specific ports—defaulting to **Port 8000**, where the vast majority of M3U playlists and IPTV servers reside—allowing you to discover active streams and play them seamlessly.
 
 ---
 
-## 🚀 Features
+## 🚀 Key Features
 
-- 🌐 **IP Range Scanner:** Scan custom IP address ranges (such as `192.168.0.0` to `192.168.255.255`) to find active IPTV servers and playlists.
-- 🔌 **Customizable Ports (Default 8000):** Set any target port you need. It defaults to **Port 8000**, which hosts the vast majority of M3U playlists and IPTV streams.
-- 📺 **Built-in Player:** Play live channels directly within your web browser interface.
-- ⚡ **Stream Management:** Quickly test and verify M3U playlist stream links in real time.
-- 🎨 **Responsive UI:** Clean, modern web interface built using HTML5, CSS3, and JavaScript.
-- 🛠️ **Powered by Flask:** Lightweight Python backend (`app.py`) for handling routes and scanning logic seamlessly.
+- 🌐 **Advanced IP Range Scanner:** Scan arbitrary subnet ranges and target custom ports to locate active servers hosting IPTV streams.
+- 🔌 **Default Port 8000 Optimization:** Pre-configured for port 8000 to instantly target standard M3U playlist environments.
+- 📺 **Integrated Web Player:** Stream live channels directly inside your browser interface.
+- ⚡ **Real-time Stream Management:** Test, validate, and organize discovered stream links instantly.
+- 🎨 **Modern Responsive UI:** Clean, dark-themed dashboard built with HTML5, CSS3, and Vanilla JavaScript.
+- 🛠️ **Lightweight Flask Backend:** Powered by a clean Python (`app.py`) engine managing background HTTP/socket requests.
 
 ---
 
 ## ⚠️ Important Note About the Web Player
 
-While the application features a convenient **built-in player**, some channels may occasionally get stuck loading or fail to play. This occurs because **web browser encoding and codec limitations** do not always natively support older or legacy broadcast transmissions (such as MPEG-TS / `.ts` streams).
+While this tool includes a convenient **built-in browser player**, certain legacy streams or older broadcast formats (such as raw MPEG-TS / `.ts`) may occasionally experience buffering or fail to load due to native browser codec restrictions.
 
-💡 **Recommendation:** If a channel experiences loading issues or if you want to enjoy **all channels without restrictions**, we recommend opening the stream links using **VLC Media Player** or any external app with M3U playlist support.
-
----
-
-## 📋 Requirements
-
-- **Python 3.8+** installed on your system.
-- Standard Python libraries (`Flask`, `requests`, etc.).
+💡 **Recommendation:** For an optimal viewing experience with 100% compatibility across all streams, open the playlist links using **VLC Media Player** or any dedicated IPTV client supporting M3U lists.
 
 ---
 
-## 📥 Installation & Download
+## 📋 System Requirements
 
-### Option 1: Direct Download (ZIP)
-Click the button below to download the latest project version:
+- **Python 3.8+**
+- Core dependencies: `Flask`, `requests`
+
+---
+
+## 📥 Installation & Setup
+
+### Option 1: Direct ZIP Download
+Click below to download the latest source package:
 
 [![Download ZIP](https://img.shields.io/badge/Download-ZIP-22c55e?style=flat-square&logo=github)](https://github.com/AstraxOf/IPTV-Player-Scanner/archive/refs/heads/main.zip)
 
